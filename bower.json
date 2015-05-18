@@ -1,0 +1,29 @@
+{
+  "name": "time-ago-element",
+  "version": "0.1.0",
+  "homepage": "https://github.com/altfuns/time-ago-element",
+  "authors": [
+    "Alfonso Aguilar <laltfuns@gmail.com>"
+  ],
+  "description": "Time Ago and tc element using Polymer and Moment.js",
+  "main": "time.html",
+  "keywords": [
+    "polymer",
+    "momentjs",
+    "time",
+    "format",
+    "time-ago"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.4.0",
+    "moment": "~2.10.3"
+  }
+}
