@@ -1,0 +1,32 @@
+<link rel="import" href="../polymer/polymer.html">
+<polymer-element name="time-format" attributes="datetime format">
+    <template>
+        <span id="timeLabel"></span>
+    </template>
+    
+    <script>
+        (function () {
+            'use strict';
+        
+            Polymer('time-format', {
+                setup: function () {
+                    var datetime = this.datetime,
+                        element = this.$.timeLabel;
+        
+                    element.innerHTML = moment(datetime).format(this.format);
+                },
+                ready: function() {
+                    this.setup();
+                },
+                attributeChanged: function () {
+                    this.setup();
+                },
+                datetime: '0000-00-00 00:00:00',
+                format: 'YYYY-MM-DD HH:mm:ss',
+                refresh: true,
+                delay: 60000
+            });
+        })(); 
+    </script>
+    <script type="text/javascript" src="bower_components/moment/min/moment.min.js"></script>
+</polymer-element>

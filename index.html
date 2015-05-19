@@ -11,6 +11,7 @@
 
 	<!-- Importing Custom Elements -->
 	<link rel="import" href="time-ago.html">
+	<link rel="import" href="time-element.html">
 
 	<style>
 		* {margin: 0;padding: 0;}
@@ -92,6 +93,11 @@
 		<div class="container">
 			<legend>Result:</legend>
 			<h4><time-ago datetime="2014-09-15 12:05:00"></time-ago></h4>
+		</div>
+
+		<div class="container">
+			<legend>Datetime format:</legend>
+			<h4><time-format datetime="2014-09-15 12:05:00" format="MMM Do YY"></time-format><time-format datetime="2014-09-15 12:05:00" format="h:mm a"></time-format></h4>
 		</div>
 	</div>
 
