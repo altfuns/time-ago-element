@@ -4,7 +4,7 @@
   "homepage": "https://github.com/altfuns/time-element",
   "authors": [
     "bruno ziiê <eu@brunoziie.com>",
-    "Alfonso Aguilar <laltfuns@gmail.com>",
+    "Alfonso Aguilar <laltfuns@gmail.com>"
   ],
   "description": "Time elements using Polymer and Moment.js",
   "main": "index.html",
