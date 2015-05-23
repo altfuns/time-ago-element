@@ -1,12 +1,13 @@
 {
-  "name": "time-ago-element",
+  "name": "time-element",
   "version": "0.1.0",
-  "homepage": "https://github.com/altfuns/time-ago-element",
+  "homepage": "https://github.com/altfuns/time-element",
   "authors": [
-    "Alfonso Aguilar <laltfuns@gmail.com>"
+    "bruno ziiê <eu@brunoziie.com>",
+    "Alfonso Aguilar <laltfuns@gmail.com>",
   ],
-  "description": "Time Ago and tc element using Polymer and Moment.js",
-  "main": "time.html",
+  "description": "Time elements using Polymer and Moment.js",
+  "main": "index.html",
   "keywords": [
     "polymer",
     "momentjs",
