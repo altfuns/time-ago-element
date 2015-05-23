@@ -1,45 +1,57 @@
 # &lt;time-ago&gt;
 
-Time Ago element using Polymer and Moment.js
-
-> Maintained by [Bruno Ziiê](https://github.com/brunoziie).
+Time elements using Polymer and Moment.js
 
 ## Demo
 
-> [Check it live](http://brunoziie.github.io/time-ago-element).
+> [Check it live](http://altfuns.github.io/time-element).
+
+## Install
+
+Install the component using [Bower](http://bower.io/):
+
+```sh
+$ bower install time-element --save
+```
 
 ## Usage
 
 1. Import Web Components' polyfill:
 
-	```html
-	<script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.3.4/platform.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.3.4/polymer.js"></script>	
+  ```html
+	<script src="bower_components/platform/platform.js"></script>
+  ```
 
-	```
-2. Import Moment.js library
+2. Import Custom Element:
 
-	```html
-	<script src="lib/moment.min.js"></script>
-	```
-3. Import Custom Element:
+  ```html
+	<link rel="import" href="bower_components/time-element/time-ago.html">
+	<link rel="import" href="bower_components/time-element/time-format.html">
+  ```
 
-	```html
-	<link rel="import" href="src/time-ago.html">
-	```
-4. Start using it!
+3. Start using it!
 
-	```html
-	<time-ago datetime="2013-08-25 20:40:00"></time-ago>
-	```
+  ```html
+	<time-ago datetime="2014-09-15 12:05:00" delay="6000" refresh="true"></time-ago>
+	<time-format datetime="2014-09-15 12:05:00" format="MMM Do YY"></time-format>
+  ```
 
 ## Options
+
+### <time-ago>
 
 Attribute   | Options      | Default                 | Description
 ---         | ---          | ---                     | ---
 `datetime`  | *string*     | `0000-00-00 00:00:00`   | Date and time in YYYY-MM-DD HH:mm:ss format
 `refresh`   | *boolean*    | `true`               	 | Auto refresh
 `delay`     | *int*        | `60000`               	 | Delay to auto refresh (in milliseconds)
+
+### <time-format>
+
+Attribute   | Options      | Default                 | Description
+---         | ---          | ---                     | ---
+`datetime`  | *string*     | `0000-00-00 00:00:00`   | Date and time in YYYY-MM-DD HH:mm:ss format
+`format`    | *string*     | `YYYY-MM-DD HH:mm:ss`   | Give the format to the result label.
 
 
 ## Contributing
@@ -49,6 +61,11 @@ Attribute   | Options      | Default                 | Description
 3. Commit your changes: `git commit -m 'Add some feature'`
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request
+
+## Manteiners
+
+<time-ago> element create by [Bruno Ziiê](https://github.com/brunoziie).
+<time-format> element create by [Alfonso Aguilar](https://github.com/altfuns).
 
 ## History
 
