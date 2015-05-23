@@ -64,8 +64,8 @@ Attribute   | Options      | Default                 | Description
 
 ## Manteiners
 
-<time-ago> element create by [Bruno Ziiê](https://github.com/brunoziie).
-<time-format> element create by [Alfonso Aguilar](https://github.com/altfuns).
+>time-ago element create by [Bruno Ziiê](https://github.com/brunoziie).
+>time-format element create by [Alfonso Aguilar](https://github.com/altfuns).
 
 ## History
 
@@ -73,6 +73,8 @@ Attribute   | Options      | Default                 | Description
 	* Created timeago element
 * v0.0.2 August 26, 2013
 	* Add delay attribute
+* v0.0.3 May 23, 2015
+	* Add bower structure, dependencies and time-format element.
 
 ## License
 
