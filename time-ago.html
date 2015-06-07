@@ -1,52 +1,63 @@
 <link rel="import" href="../polymer/polymer.html">
-<polymer-element name="time-ago" attributes="datetime refresh delay">
+<dom-module id="time-ago">
+    <script type="text/javascript" src="../moment/min/moment.min.js"></script>
     <template>
         <span id="timeago"></span>
     </template>
-    
-    <script>
-        (function () {
-            'use strict';
-
-            var Timeago = {
-                    getTimeAgoText: function (datetime) {
-                        return moment(datetime, 'YYYY-MM-DD HH:mm:ss').fromNow();
-                    },
-            
-                    refresh: function (element, datetime) {
-                        element.innerHTML = this.getTimeAgoText(datetime);
-                    }
-                },
-                interval;
-        
-            Polymer('time-ago', {
-                setup: function () {
-                    var datetime = this.datetime,
-                        element = this.$.timeago;
-        
-                    element.innerHTML = Timeago.getTimeAgoText(this.datetime);
-        
-                    if (this.refresh === true) {
-                        if (typeof interval !== 'undefined') {
-                            clearInterval(interval);
-                        }
-
-                        interval = setInterval(function () {
-                            Timeago.refresh(element, datetime);
-                        }, this.delay);
-                    }
-                },
-                ready: function() {
-                    this.setup();
-                },
-                attributeChanged: function () {
-                    this.setup();
-                },
-                datetime: '0000-00-00 00:00:00',
-                refresh: true,
-                delay: 60000
-            });
-        })(); 
-    </script>
-    <script type="text/javascript" src="../moment/min/moment.min.js"></script>
 </polymer-element>
+<script>
+    (function () {
+        'use strict';
+
+        var Timeago = {
+                getTimeAgoText: function (datetime) {
+                    return moment(datetime, 'YYYY-MM-DD HH:mm:ss').fromNow();
+                },
+        
+                refresh: function (element, datetime) {
+                    element.innerHTML = this.getTimeAgoText(datetime);
+                }
+            },
+            interval;
+
+        Polymer({
+            is : 'time-ago',
+            properties : {
+                datetime : {
+                    type : String,
+                    value : '0000-00-00 00:00:00',
+                    observer : 'setup'
+                },
+                refresh : {
+                    type : Boolean,
+                    value : true,
+                    observer : 'setup'
+                },
+                delay : {
+                    type : Number,
+                    value : 60000,
+                    observer : 'setup'
+                } 
+            },
+            setup: function () {
+                var datetime = this.datetime,
+                    element = this.$.timeago;
+
+                element.innerHTML = Timeago.getTimeAgoText(this.datetime);
+
+                if (this.refresh === true) {
+                    if (typeof interval !== 'undefined') {
+                        clearInterval(interval);
+                    }
+
+                    interval = setInterval(function () {
+                        Timeago.refresh(element, datetime);
+                    }, this.delay);
+                }
+            },
+            ready: function() {
+                this.setup();
+            }
+        });
+    })(); 
+</script>
