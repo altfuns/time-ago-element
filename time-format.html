@@ -1,6 +1,7 @@
 <link rel="import" href="../polymer/polymer.html">
+<script src="../moment/min/moment-with-locales.min.js"></script>
+
 <dom-module id="time-format">
-    <script type="text/javascript" src="../moment/min/moment.min.js"></script>
     <template>
         <span id="timeLabel"></span>
     </template>
@@ -18,7 +19,12 @@
                 type : String,
                 value : 'YYYY-MM-DD HH:mm:ss',
                 observer : 'setup'
-            } 
+            },
+            locale: {
+                type: String,
+                value: 'en',
+                observer: 'localeChanged'
+            }
         },
         setup: function () {
             var datetime = this.datetime,
@@ -28,6 +34,9 @@
         },
         ready: function() {
             this.setup();
+        },
+        localeChanged: function() {
+          moment.locale(this.locale);
         }
     });
 </script>
